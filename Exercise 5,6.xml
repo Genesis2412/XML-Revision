@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!--
+    Rewrite the following using attributes only, thus making it an empty element
+    <name>
+        <first>John</first>
+        <middle>Fitzgeral</middle>
+        <last>Doe</last>
+    </name>
+-->
+<root>
+    <name first_name="John" middle_name="Fitzgeral" last_name="Doe"/>
+
+<!--
+    The following XML document contains a few syntactical errors, preventing it from being well formed
+    Correct tje, so that the document can be read
+    <?xml version="1.0"?>
+    <document>
+    "<__There are a couple...__>
+    <Information>This document contains some < bold>information</bold>.Once it's corrected, it can be read
+    by a parser.</Information>
+    </document>
+-->
+
+    <document>
+        <!-- There are a couple...(First error missed ! in the comment)-->
+        <Information>
+            This document contains some <bold><!--(Second error case senstive white space before the b-->
+            information</bold>.Once it's corrected, it can be read by a parser.
+        </Information>
+    </document><!--(third error, should be either Document or document at both start and end tag)-->
+</root>
